@@ -1,6 +1,6 @@
 from core.settings.base import *
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
