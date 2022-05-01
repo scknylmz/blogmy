@@ -12,10 +12,12 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
-
+import environ
 
 from django.contrib.messages import constants as messages
-
+# Initialise environment variables
+env = environ.Env()
+environ.Env.read_env()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
@@ -24,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-pc2-xub^ss!dn*e^pp+iwl$hb4fn-*&ab#x(h9o*e2#=u*7=up'
+SECRET_KEY = os.environ.get('SECRET_KEY', None)
 
 
 ALLOWED_HOSTS = ['192.168.31.158','localhost', 'seckinyilmaz.me', 'www.seckinyilmaz.me', '159.65.196.171']
