@@ -1,0 +1,28 @@
+<div class="co-12" id="contact-form">
+    
+    {% if form != "No Error" %}
+        {% for error in form %}<p class="login-box-msg" style="color: red;">{{error}}</p>{% endfor %}
+    {% endif %}
+
+    
+    {% if valid %}
+    <input type="submit" 
+        name="submit" 
+        value="Send Message" 
+        class="btn btn-primary" 
+        id="send-mail"
+        form="ContactForm"
+        hx-swap-oob='true'>
+
+    {% else %}
+    <input type="submit" 
+            name="submit" 
+            value="Send Message" 
+            class="btn btn-primary" 
+            id="send-mail"
+            form="ContactForm"
+            hx-swap-oob='true'
+            disabled>
+    {% endif %} 
+</div>
+

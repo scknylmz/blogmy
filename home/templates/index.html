@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div id="colorlib-main">
+	<div class="row" style="background-image: url({% static 'images/net-shape-2.png' %});">
+	{% if messages %}
+		<ul class="messages">
+			{% for message in messages %}
+				<li class="{{ message.tags }}">{{ message }}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+	{% include 'partials/section_1.html' %}
+
+	{% include 'partials/about_me.html' %}
+	
+	{% include 'partials/works.html' %}
+
+	{% include 'partials/recent_blog.html' %}
+
+	{% include 'partials/get_in_touch.html' %}
+	</div>
+</div><!-- end:colorlib-main -->
+{% endblock content %}
